@@ -31,18 +31,19 @@ npm run build
 ## 1. 工程目录
 > 
 ```
-- build
+- build             // webpack config
 - src
-  - components
+  - components      // 组件库
     - ComA
     - ComB
-  - containers
+  - containers      // 页面
     - PageA
     - PageB
-  - services       
-  - statics
-  - store
-  - tpl
+  - services        // 异步请求封装
+  - statics         // 静态资源
+  - store           // 状态管理
+  - tpl             // 模板
+  - utils           // 工具函数
   - routes.js
   - index.js
   - index.html
