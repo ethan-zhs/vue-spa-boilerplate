@@ -22,7 +22,10 @@ npm run build
 * [vuex](https://vuex.vuejs.org/zh/guide/)
 * [vue-router](https://router.vuejs.org/zh/)
 * [express](http://facebook.github.io/immutable-js/)
-* [axois](https://www.axios.com/)
+* [axios](https://www.axios.com/)
+* [webpack 4](https://webpack.github.io/)
+* [UI iview](https://www.iviewui.com/)
+* [vue-quill-editor](https://www.npmjs.com/package/vue-quill-editor)
 
 ---
 ## 1. 工程目录
@@ -38,10 +41,10 @@ npm run build
     - PageB
   - services       
   - statics
+  - store
   - tpl
   - routes.js
   - index.js
-  - store.js
   - index.html
 - server.js
 
