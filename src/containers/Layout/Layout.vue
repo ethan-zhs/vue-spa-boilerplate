@@ -22,7 +22,6 @@ export default {
         Nav
     },
     mounted() {
-        console.log(this.$route);
     }
 };
 </script>

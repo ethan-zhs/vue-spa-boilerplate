@@ -83,6 +83,7 @@
 <script>
 import { createNamespacedHelpers } from 'vuex';
 import TableCom from '../../components/TableCom/index.vue';
+import Store from './store';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('Page1');
 
@@ -119,7 +120,6 @@ export default {
     computed: {
         ...mapGetters({
             requesting: 'requesting',
-            optionList: 'optionList',
             branchConfigList: 'branchConfigList',
             totalCount: 'totalCount',
             ruleValidate: 'ruleValidate'
@@ -132,7 +132,8 @@ export default {
             getBranchConfigItemStaus: 'getBranchConfigItemStaus',
             addBranchConfig: 'addBranchConfig',
             deleteBranchConfig: 'deleteBranchConfig',
-            updateBranchConfig: 'updateBranchConfig'
+            updateBranchConfig: 'updateBranchConfig',
+            clearPage: 'clearPage'
         }),
 
         search(params = {}) {
@@ -227,10 +228,18 @@ export default {
             }
         }
     },
-    
+
+    beforeCreate() {
+        this.$store.registerModule('Page1', Store);
+    },    
 
     mounted() {
         this.search();
+    },
+
+    destroyed() {
+        this.clearPage();
+        this.$store.unregisterModule('Page1');
     }
 };
 </script>

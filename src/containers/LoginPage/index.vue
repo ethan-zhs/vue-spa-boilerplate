@@ -21,6 +21,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
+import Store from './store';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('LoginPage');
 
@@ -61,7 +62,7 @@ export default {
         submitForm() {
             if (this.formFields.username == 'Admin' && this.formFields.password == '123456') {
                 localStorage.setItem('userId', this.formFields.username);
-                this.$router.push('/index');
+                this.$router.push('/page1');
             } else {
                 this.$Message.error('用户名或密码错误');
             }
@@ -70,12 +71,15 @@ export default {
 
     created() {
         if (localStorage.getItem('userId')) {
-            this.$router.push('/index');
+            this.$router.push('/page1');
         } else {
             this.showLogin = true;
         }
     },
-    
+
+    beforeCreate() {
+        this.$store.registerModule('LoginPage', Store);
+    },   
 
     mounted() {
         document.addEventListener('keyup', (e) => {
@@ -86,6 +90,10 @@ export default {
                 this.handleSubmit('loginForm');
             }
         });
+    },
+
+    destroyed() {
+        this.$store.unregisterModule('LoginPage');
     }
 };
 </script>

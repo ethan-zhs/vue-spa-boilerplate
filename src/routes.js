@@ -13,7 +13,7 @@ const routes = [{
     component: () => import('./containers/Layout/Layout.vue'),
     children: [     
         {
-            path: '/index',
+            path: '/page1',
             component: () => import('./containers/Page1/index.vue'),
             meta: {
                 auth: true,
@@ -21,7 +21,7 @@ const routes = [{
             }
         },
         {
-            path: '/platform',
+            path: '/page2',
             component: () => import('./containers/Page2/index.vue'),
             meta: {
                 auth: true,

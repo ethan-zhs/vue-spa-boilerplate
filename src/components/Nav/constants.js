@@ -5,11 +5,11 @@ export const mainMenu = [
         children: [
             {
                 name: '菜单一',
-                path: '/index'
+                path: '/page1'
             },
             {
                 name: '菜单二',
-                path: '/platform'
+                path: '/page2'
             }
         ]
     }

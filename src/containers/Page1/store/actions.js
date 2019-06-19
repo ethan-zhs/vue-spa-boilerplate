@@ -33,11 +33,14 @@ export const updateBranchConfig = ({ dispatch, commit }, params) => {
 
 export const deleteBranchConfig = ({ dispatch, commit }, params) => {
     commit('DELETE_BRANCH_CONFIG_REQUEST');
-    console.log(params);
 
     return Api.deleteBranchConfig(params).then((res) => {
         commit('DELETE_BRANCH_CONFIG_SUCCESS', res);
     }).catch((err) => {
         commit('DELETE_BRANCH_CONFIG_FAILURE', err);
     });
+};
+
+export const clearPage = ({ dispatch, commit }) => {
+    commit('CLEAR_PAGE');
 };

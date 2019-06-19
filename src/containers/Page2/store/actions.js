@@ -41,3 +41,7 @@ export const deletePlatform = ({ dispatch, commit }, params) => {
         commit('DELETE_PLATFORM_FAILURE', err);
     });
 };
+
+export const clearPage = ({ dispatch, commit }, params) => {
+    commit('CLEAR_PAGE');
+};

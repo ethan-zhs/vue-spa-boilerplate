@@ -72,6 +72,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
+import Store from './store';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('Page2');
 
@@ -111,7 +112,8 @@ export default {
             getPlatform: 'getPlatform',
             addPlatform: 'addPlatform',
             deletePlatform: 'deletePlatform',
-            updatePlatform: 'updatePlatform'
+            updatePlatform: 'updatePlatform',
+            clearPage: 'clearPage'
         }),
 
         search(params = {}) {
@@ -188,9 +190,17 @@ export default {
         }
     },
     
+    beforeCreate() {
+        this.$store.registerModule('Page2', Store);
+    },  
 
     mounted() {
         this.search();
+    },
+
+    destroyed() {
+        this.clearPage();
+        this.$store.unregisterModule('Page2');
     }
 };
 </script>

@@ -1,7 +1,7 @@
 
 <template>
     <div :class="$style.nav">
-        <a href="/index">
+        <a href="/page1">
             <div :class="$style['nav-top']">
                 <img src="../../statics/images/logo.png" />
             </div>
